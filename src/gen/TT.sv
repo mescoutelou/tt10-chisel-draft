@@ -11,7 +11,7 @@ module TT(
     if (reset)
       r_out <= 8'h0;
     else
-      r_out <= {io_i_in[6:0], 1'h0} + 8'h2;
+      r_out <= io_i_in + 8'h2;
   end // always @(posedge)
   assign io_o_out = r_out;
 endmodule
