@@ -6,20 +6,13 @@ module TT(
   output [7:0] io_o_out
 );
 
-  wire [31:0] _m_alu_io_o_res;
-  reg  [7:0]  r_out;
-  wire [31:0] _GEN = {24'h0, io_i_in};
+  reg [7:0] r_out;
   always @(posedge clock) begin
     if (reset)
       r_out <= 8'h0;
     else
-      r_out <= _m_alu_io_o_res[7:0];
+      r_out <= {io_i_in[6:0], 1'h0} + 8'h2;
   end // always @(posedge)
-  Alu m_alu (
-    .io_i_s1  (_GEN),
-    .io_i_s2  (_GEN),
-    .io_o_res (_m_alu_io_o_res)
-  );
   assign io_o_out = r_out;
 endmodule
 
