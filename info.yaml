@@ -19,7 +19,7 @@ project:
   source_files:
     - "project.sv"
     - "gen/Alu.sv"
-    - "gen/Bru.sv"
+#    - "gen/Bru.sv"
     - "gen/TT.sv"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.

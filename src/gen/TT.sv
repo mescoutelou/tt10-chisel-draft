@@ -16,19 +16,9 @@ module TT(
       r_out <= _m_alu_io_o_res[7:0];
   end // always @(posedge)
   Alu m_alu (
-    .io_i_sel    (3'h0),
-    .io_i_signed (1'h0),
-    .io_i_s1     (_GEN),
-    .io_i_s2     (_GEN),
-    .io_o_res    (_m_alu_io_o_res)
-  );
-  Bru m_bru (
-    .io_i_sel (3'h0),
-    .io_i_pc  (32'h0),
-    .io_i_s1  (32'h0),
-    .io_i_s2  (32'h0),
-    .io_o_br  (/* unused */),
-    .io_o_res (/* unused */)
+    .io_i_s1  (_GEN),
+    .io_i_s2  (_GEN),
+    .io_o_res (_m_alu_io_o_res)
   );
   assign io_o_out = r_out;
 endmodule
